@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'genos', 'ubuntu', 'arial';
+    box-sizing: border-box;
+}
+
+.heading {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.container {
+    display: grid;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    grid-template-columns: auto auto auto;
+}
+
+.box {
+    border: 1px solid black;
+}
