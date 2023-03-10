@@ -21,3 +21,27 @@
 .box {
     border: 1px solid black;
 }
+.button-container {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+.restart {
+    width: 120px;
+    height: 30px;
+    font-size: 1.1em;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-bottom: 1px solid #29a87e;
+    border-radius: 3px;
+    transition: .20s;
+}
+
+.restart:hover, .restart:active {
+    cursor: pointer;
+}
+
+.restart:active {
+    background-color: #29a87e;
+    color: #fff;
+}
