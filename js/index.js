@@ -64,3 +64,9 @@ for (let i = 0; i < buttons.length; i++) {
         }
     });
 }
+
+function restartGame() {
+    buttons.forEach((button) => {
+        button.innerHTML = "";
+    });
+}
