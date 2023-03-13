@@ -13,27 +13,7 @@ let displayInfo = document.getElementById("display-info");
 
 displayInfo.innerHTML = "your turn";
 
-const buttonZero = document.getElementById("box-index0");
-const buttonOne = document.getElementById("box-index1");
-const buttonTwo = document.getElementById("box-index2");
-const buttonThree = document.getElementById("box-index3");
-const buttonFour = document.getElementById("box-index4");
-const buttonFive = document.getElementById("box-index5");
-const buttonSix = document.getElementById("box-index6");
-const buttonSeven = document.getElementById("box-index7");
-const buttonEight = document.getElementById("box-index8");
-
-const buttons = [
-    buttonZero,
-    buttonOne,
-    buttonTwo,
-    buttonThree,
-    buttonFour,
-    buttonFive,
-    buttonSix,
-    buttonSeven,
-    buttonEight
-]
+const buttons = document.querySelectorAll(".box");
 
 /**
  * This function is supposed to let the computer play for itself,
@@ -41,7 +21,7 @@ const buttons = [
  */
 function opponentPlay() {
     let position = Math.floor(Math.random() * 9);
-    if (buttons[position].innerHTML === "") {
+    if (buttons[position].textContent === "") {
         displayInfo.innerHTML = "O's turn";
         buttons[position].innerHTML = "O";
         displayInfo.innerHTML = "your turn";
@@ -51,22 +31,21 @@ function opponentPlay() {
 
 }
 
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', () => {
-        if (buttons[i].textContent === "") {
-            buttons[i].innerHTML = "X";
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (button.textContent === "") {
+            button.innerHTML = "X";
             opponentPlay();
         } else {
-            // setTimeout(() => {
-            //     displayInfo.innerHTML = "not possible"
-            // }, 5000);
-            displayInfo.innerHTML = "your turn";
+            displayInfo = "your turn";
         }
     });
-}
+});
 
 function restartGame() {
     buttons.forEach((button) => {
         button.innerHTML = "";
     });
 }
+
+// right a function that get's the position of each button of first x and secondly o, then pass it to an array and match it with the WINNING_COMBINATIONS array and see if that pattern exist in the in array, if so then echo the winner as maybe an alert(), then fixe it well and improve the logic and ui
