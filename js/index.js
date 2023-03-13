@@ -38,17 +38,15 @@ const buttons = [
 /**
  * This function is supposed to let the computer play for itself,
  * after the player have picked a box
- * @param {*} buttons 
  */
-function opponentPlay(buttons) {
-    let position;
-    if (buttons[position] === "") {
-        position = Math.floor(Math.random() * 9);
+function opponentPlay() {
+    let position = Math.floor(Math.random() * 9);
+    if (buttons[position].innerHTML === "") {
         displayInfo.innerHTML = "O's turn";
         buttons[position].innerHTML = "O";
         displayInfo.innerHTML = "your turn";
     } else {
-        opponentPlay(buttons);
+        opponentPlay();
     }
 
 }
@@ -57,11 +55,11 @@ for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', () => {
         if (buttons[i].textContent === "") {
             buttons[i].innerHTML = "X";
-            opponentPlay(buttons);
+            opponentPlay();
         } else {
-            setTimeout(() => {
-                displayInfo.innerHTML = "not possible"
-            }, 5000);
+            // setTimeout(() => {
+            //     displayInfo.innerHTML = "not possible"
+            // }, 5000);
             displayInfo.innerHTML = "your turn";
         }
     });
