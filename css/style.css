@@ -100,19 +100,3 @@ body {
 .scores-container > #display-info {
   font-size: 1.1em;
 }
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  border-top: #53a4ca 1px solid;
-}
-footer > .footer-container {
-  display: flex;
-  justify-content: center;
-  padding: 30px 0;
-}
-
-footer > small {
-  text-align: center;
-}
